@@ -7,7 +7,13 @@ body{
 
 a{
 	text-decoration: none;
+}
+
+.joinLink{
 	color: #FF6600;
+	float: left;
+	width: 60px;
+	margin-left: 25px;
 }
 
 #conteiner{
@@ -42,7 +48,6 @@ a{
 	}
 
 .footer{
-	position: relative;
 	top: 0px;
 	left:180px;
 	font-size: 11px;
