@@ -13,8 +13,15 @@ a{
 .joinLink{
 	color: #FF6600;
 	float: left;
-	width: 70px;
+	width: 85px;
 	margin-left: 5px;
+	
+}
+.joinLink:hover{
+    	color: #FFB280;
+}
+.joinLink:visited{
+    	color: #662900;
 }
 
 #conteiner{

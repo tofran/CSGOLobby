@@ -6,7 +6,7 @@ function edit(){
 		//get the code and convert it (btw only the last 8 chars, max possible comb's 10^8)
 		var lobby8 = parseFloat(input.substr(32,8));
 		//add the links
-		for (i = 1; i < 1499; ++i){
+		for (i = 1; i <= 1500; ++i){
 			//increment the lobby
 			lobby8++;
 			//create the new link, and set the atributes
@@ -14,7 +14,7 @@ function edit(){
 			newLink.setAttribute("class", "joinLink");
 			newLink.setAttribute("target", "_blank");
 			newLink.setAttribute("href", input.substr(0,32) + getString8(lobby8));
-			newLink.innerHTML = "Join " + i + " ";
+			newLink.innerHTML = "Join #" + i;
 
 			//add the new link
 			document.getElementById('linksHere').appendChild(newLink);
