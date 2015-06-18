@@ -10,7 +10,7 @@ a{
 	text-decoration: none;
 }
 
-.joinLink{
+.joinLink, .visited{
 	color: #FF6600;
 	float: left;
 	width: 85px;
@@ -18,10 +18,7 @@ a{
 	
 }
 .joinLink:hover{
-    	color: #FFB280;
-}
-.joinLink:visited{
-    	color: #662900;
+	color: #FFB280;
 }
 
 #conteiner{

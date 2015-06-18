@@ -13,13 +13,26 @@ function edit(){
 			var newLink = document.createElement("a");
 			newLink.setAttribute("class", "joinLink");
 			newLink.setAttribute("target", "_blank");
+			newLink.setAttribute("onclick", "visited(this)");
+			//getElementById("lastClicked").setAttribute = 
 			newLink.setAttribute("href", input.substr(0,32) + getString8(lobby8));
 			newLink.innerHTML = "Join #" + i;
-
 			//add the new link
 			document.getElementById('linksHere').appendChild(newLink);
 		}
 	}	
+}
+
+function visited(thisLink){
+	//get all the old links
+	var oldLinks = document.getElementsByClassName("visited");
+	//change their color
+	for(var i=0; i<oldLinks.length; i++){
+	    oldLinks[i].style.color = "#662900";
+	}
+	//set the newly clicked link with the respective class and color
+	thisLink.setAttribute("class","visited");
+	thisLink.style.color = "#FF1919";
 }
 
 function cleanTextBox(){
