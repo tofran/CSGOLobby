@@ -7,7 +7,7 @@ function edit(){
 	//@todo validate correcly
 	if (lobby > 0) {
 		//add the links
-		for (i = 1; i < 500; ++i){
+		for (i = 1; i < 1499; ++i){
 			//create the new link, and set the atrubutes
 			var newLink = document.createElement("a");
 			newLink.setAttribute("class", "joinLink");
@@ -17,11 +17,6 @@ function edit(){
 
 			//add the new link
 			document.getElementById('linksHere').appendChild(newLink);
-
-			if(i%8 == 0) {
-				var br = document.createElement("br");
-				document.getElementById('linksHere').appendChild(br);
-			}
 		}
 	}	
 } 
@@ -29,7 +24,7 @@ function edit(){
 
 function cleanTextBox(){
 	//clean textboxes
-	document.getElementById("textbox1").value = '';
+	document.getElementById("textbox1").value = "";
 	//clear the links
 	document.getElementById("linksHere").innerHTML = "";
 }
