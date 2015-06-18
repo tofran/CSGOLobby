@@ -1,5 +1,6 @@
 //by Tofran
 function edit(){
+	document.getElementById("linksHere").innerHTML = "";
 	var input = document.getElementById("textbox1").value.replace(" ", "");
 	//@todo validate correcly
 	if(input != ""){
