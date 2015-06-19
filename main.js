@@ -1,4 +1,4 @@
-//by Tofran
+//by Tofran - http://tofran.com
 function edit(){
 	document.getElementById("linksHere").innerHTML = "";
 	var input = document.getElementById("textbox1").value.replace(" ", "");
@@ -7,19 +7,19 @@ function edit(){
 		//get the code and convert it (btw only the last 8 chars, max possible comb's 10^8)
 		var lobby8 = parseFloat(input.substr(32,8));
 		//add the links
-		for (i = 1; i <= 3000; ++i){
-			//increment the lobby
-			lobby8++;
+		for (i = -200; i <= 2000; ++i){
 			//create the new link, and set the atributes
 			var newLink = document.createElement("a");
 			newLink.setAttribute("class", "joinLink");
 			newLink.setAttribute("target", "_blank");
 			newLink.setAttribute("onclick", "visited(this)");
-			//getElementById("lastClicked").setAttribute = 
-			newLink.setAttribute("href", input.substr(0,32) + getString8(lobby8));
-			newLink.innerHTML = "Join #" + i;
-			//add the new link
-			document.getElementById('linksHere').appendChild(newLink);
+			newLink.setAttribute("href", input.substr(0,32) + getSwZeroLeft((lobby8 + i), 8));
+			newLink.innerHTML = "Join #" + getSwZeroLeft(i, 4);		
+			//if it overflows it will not be shown
+			if((i!=0) && (lobby8+i < 99999999) && (lobby8+i > 0)){
+				//add the new link
+				document.getElementById('linksHere').appendChild(newLink);
+			}
 		}
 	}	
 }
@@ -43,11 +43,19 @@ function cleanTextBox(){
 	document.getElementById("linksHere").innerHTML = "";
 }
 
-
-function getString8(num) {
-    var s = num+"";
-    while (s.length < 8){
-    	s = "0" + s;
+function getSwZeroLeft(num, nLenght) {
+    var st = num+"";
+    var isNegative = false;
+    if(num<0){
+    	nLenght--;
+    	st = st.substr(1);
+    	isNegative = true;
     }
-    return s;
+    while (st.length < nLenght){
+    	st = "0" + st;
+    }
+    if(isNegative){
+    	st = "-" + st;
+    }
+    return st;
 }
