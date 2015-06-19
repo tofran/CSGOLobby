@@ -13,8 +13,8 @@ function edit(){
 			newLink.setAttribute("class", "joinLink");
 			newLink.setAttribute("target", "_blank");
 			newLink.setAttribute("onclick", "visited(this)");
-			newLink.setAttribute("href", input.substr(0,32) + getSwZeroLeft((lobby8 + i), 8));
-			newLink.innerHTML = "Join #" + getSwZeroLeft(i, 4);		
+			newLink.setAttribute("href", input.substr(0,32) + getNumberLenght((lobby8 + i), 8));
+			newLink.innerHTML = "Join #" + getNumberLenght(i, 4);		
 			//if it overflows it will not be shown
 			if((i!=0) && (lobby8+i < 99999999) && (lobby8+i > 0)){
 				//add the new link
@@ -43,7 +43,7 @@ function cleanTextBox(){
 	document.getElementById("linksHere").innerHTML = "";
 }
 
-function getSwZeroLeft(num, nLenght) {
+function getNumberLenght(num, nLenght) {
     var st = num+"";
     var isNegative = false;
     if(num<0){
