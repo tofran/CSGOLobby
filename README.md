@@ -4,8 +4,4 @@ Open this in the steam browser and join random Counter Strike: Global Offensive 
 
 ## License
 
-This code is under [Attribution 4.0 International license] ([Text version][LICENSE])
-
-
-[Attribution 4.0 International license]: <http://creativecommons.org/licenses/by/4.0/>
-[LICENSE]: <./LICENSE>
+This code is under [Attribution 4.0 International license](http://creativecommons.org/licenses/by/4.0/) ([Text version](./LICENSE))
