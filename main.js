@@ -9,19 +9,17 @@ function edit(){
 		//add the links
 		for (i = -200; i <= 2000; ++i){
 			//create the new link, and set the atributes
-			var newLink = document.createElement("a");
-			newLink.setAttribute("class", "joinLink");
-			newLink.setAttribute("target", "_blank");
-			newLink.setAttribute("onclick", "visited(this)");
-			newLink.setAttribute("href", input.substr(0,32) + getNumberLenght((lobby8 + i), 8));
-			newLink.innerHTML = "Join #" + getNumberLenght(i, 4);		
-			//if it overflows it will not be shown
 			if((i!=0) && (lobby8+i < 99999999) && (lobby8+i > 0)){
-				//add the new link
+				var newLink = document.createElement("a");
+				newLink.setAttribute("class", "joinLink");
+				newLink.setAttribute("target", "_blank");
+				newLink.setAttribute("onclick", "visited(this)");
+				newLink.setAttribute("href", input.substr(0,32) + getNumberLenght((lobby8 + i), 8));
+				newLink.innerHTML = "Join #" + getNumberLenght(i, 4);
 				document.getElementById('linksHere').appendChild(newLink);
 			}
 		}
-	}	
+	}
 }
 
 function visited(thisLink){
